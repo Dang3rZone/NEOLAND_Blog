@@ -5,4 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class ServicioService {
   constructor() {}
+
+  agregarPost(Post) {}
+
+  getAllPosts() {}
+
+  getPostsByCategoria(cat) {}
 }

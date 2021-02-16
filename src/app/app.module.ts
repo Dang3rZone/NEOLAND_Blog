@@ -6,13 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { BlogComponent } from './Components/blog/blog.component';
 import { FormularioComponent } from './Components/formulario/formulario.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponent,
     FormularioComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -75,7 +75,7 @@ export class ServicioService {
     });
   }
 
-  getArrCategorias(): string[] {
+  getAllCategories(): string[] {
     const newArray = this.articles.map(
       (categoryArray) => categoryArray.categoria
     );

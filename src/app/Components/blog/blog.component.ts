@@ -10,6 +10,7 @@ import { ServicioService } from 'src/app/Servicio.service';
 export class BlogComponent implements OnInit {
   articles: Post[];
   categories: string[];
+  fecha: Date;
 
   constructor(private petitions: ServicioService) {
     this.articles = [];
@@ -17,7 +18,7 @@ export class BlogComponent implements OnInit {
 
   async ngOnInit() {
     this.articles = await this.petitions.getAllArticles();
-    this.categories = await this.petitions.getArrCategorias();
+    this.categories = await this.petitions.getAllCategories();
   }
 
   async onChange($event) {

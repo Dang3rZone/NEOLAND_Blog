@@ -11,24 +11,27 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class FormularioComponent implements OnInit {
   articles: Post[];
   categories: string[];
-  formulario: FormGroup;
+  form: FormGroup;
 
   constructor(private petitions: ServicioService) {
     this.articles = [];
-    this.formulario = new FormGroup({
+    this.form = new FormGroup({
       titulo: new FormControl(),
-      descripcion: new FormControl(),
-      url: new FormControl(),
+      texto: new FormControl(),
+      autor: new FormControl(),
+      imagen: new FormControl(),
+      fecha: new FormControl(),
+      categoria: new FormControl(),
     });
   }
 
   async ngOnInit() {
-    this.categories = this.petitions.getArrCategorias();
+    this.categories = this.petitions.getAllCategories();
   }
 
   async onSubmit() {
-    const newArticles = await this.petitions.agregarPost(this.formulario.value);
+    const newArticles = await this.petitions.agregarPost(this.form.value);
     console.log(newArticles);
-    this.formulario.reset();
+    this.form.reset();
   }
 }

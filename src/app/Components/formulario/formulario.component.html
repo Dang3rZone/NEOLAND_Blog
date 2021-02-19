@@ -1,4 +1,4 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <!-- Titulo input -->
   <div class="form-outline mb-4">
     <input
@@ -6,6 +6,7 @@
       id="form4Example1"
       class="form-control form-group"
       placeholder="Titulo"
+      formControlName="titulo"
     />
   </div>
 
@@ -16,6 +17,7 @@
       id="form4Example1"
       class="form-control form-group"
       placeholder="Autor"
+      formControlName="autor"
     />
   </div>
   <!-- Fecha input -->
@@ -25,6 +27,7 @@
       id="form4Example1"
       class="form-control form-group"
       placeholder="Fecha"
+      formControlName="fecha"
     />
   </div>
 
@@ -35,6 +38,7 @@
       id="form4Example2"
       class="form-control form-group"
       placeholder="Imagen URL"
+      formControlName="imagen"
     />
   </div>
 
@@ -45,6 +49,7 @@
       id="form4Example3"
       rows="4"
       placeholder="Texto"
+      formControlName="texto"
     ></textarea>
   </div>
 
@@ -55,9 +60,14 @@
         >Categories</label
       >
     </div>
-    <select class="custom-select" id="inputGroupSelect01" id="selectCategoria">
+    <select
+      class="custom-select"
+      id="inputGroupSelect01"
+      id="selectCategoria"
+      formControlName="categoria"
+    >
       <option value="all">All</option>
-      <option [value]="category" *ngFor="let category of categories" selected>
+      <option [value]="category" *ngFor="let category of categories">
         {{ category }}
       </option>
     </select>

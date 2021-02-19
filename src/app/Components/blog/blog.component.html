@@ -10,7 +10,7 @@
     id="selectCategoria"
   >
     <option value="all">All</option>
-    <option [value]="category" *ngFor="let category of categories" selected>
+    <option [value]="category" *ngFor="let category of categories">
       {{ category }}
     </option>
   </select>
@@ -30,7 +30,9 @@
       <h3 class="mbr-section-title mbr-fonts-style align-right display-3">
         {{ article.titulo }}
       </h3>
-      <label>{{ article.fecha }}</label>
+      <label>{{ article.fecha | date: "dd/MM/yyyy HH:mm" }}</label>
+      <br />
+      <label>By {{ article.autor }}, </label>
       <div class="mbr-section-text mbr-fonts-style align-right display-7">
         {{ article.texto }} <br />
       </div>

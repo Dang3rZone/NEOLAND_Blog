@@ -1,1 +1,68 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <!-- Titulo input -->
+  <div class="form-outline mb-4">
+    <input
+      type="text"
+      id="form4Example1"
+      class="form-control form-group"
+      placeholder="Titulo"
+    />
+  </div>
+
+  <!-- Autor input -->
+  <div class="form-outline mb-4">
+    <input
+      type="text"
+      id="form4Example1"
+      class="form-control form-group"
+      placeholder="Autor"
+    />
+  </div>
+  <!-- Fecha input -->
+  <div class="form-outline mb-4">
+    <input
+      type="text"
+      id="form4Example1"
+      class="form-control form-group"
+      placeholder="Fecha"
+    />
+  </div>
+
+  <!-- Img input -->
+  <div class="form-outline mb-4">
+    <input
+      type="email"
+      id="form4Example2"
+      class="form-control form-group"
+      placeholder="Imagen URL"
+    />
+  </div>
+
+  <!-- Texto input -->
+  <div class="form-outline mb-4">
+    <textarea
+      class="form-control form-group"
+      id="form4Example3"
+      rows="4"
+      placeholder="Texto"
+    ></textarea>
+  </div>
+
+  <!-- categories -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01"
+        >Categories</label
+      >
+    </div>
+    <select class="custom-select" id="inputGroupSelect01" id="selectCategoria">
+      <option value="all">All</option>
+      <option [value]="category" *ngFor="let category of categories" selected>
+        {{ category }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+</form>

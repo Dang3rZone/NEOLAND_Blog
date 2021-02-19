@@ -9,7 +9,7 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, RouterModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

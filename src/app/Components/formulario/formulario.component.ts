@@ -14,7 +14,7 @@ export class FormularioComponent implements OnInit {
   form: FormGroup;
 
   constructor(private petitions: ServicioService) {
-    this.articles = [];
+    // form validation
     this.form = new FormGroup({
       titulo: new FormControl(),
       texto: new FormControl(),
@@ -31,7 +31,7 @@ export class FormularioComponent implements OnInit {
 
   async onSubmit() {
     const newArticles = await this.petitions.agregarPost(this.form.value);
-    console.log(newArticles);
+    // console.log(newArticles);
     this.form.reset();
   }
 }

@@ -49,7 +49,7 @@ export class ServicioService {
   getAllArticles(): Promise<Post[]> {
     return new Promise<Post[]>((resolve, reject) => {
       resolve(this.articles);
-      console.log(this.articles);
+      // console.log(this.articles);
     });
   }
 
@@ -57,6 +57,7 @@ export class ServicioService {
     return new Promise((resolve, reject) => {
       this.articles.push(post);
       resolve(this.articles);
+      localStorage.setItem('arr_articles', JSON.stringify(this.articles));
     });
   }
 
@@ -71,7 +72,7 @@ export class ServicioService {
       }
       resolve(categoryArray);
 
-      console.log(categoryArray);
+      // console.log(categoryArray);
     });
   }
 
@@ -79,6 +80,7 @@ export class ServicioService {
     const newArray = this.articles.map(
       (categoryArray) => categoryArray.categoria
     );
+
     return [...new Set(newArray)];
   }
 }

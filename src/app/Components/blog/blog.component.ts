@@ -13,13 +13,12 @@ export class BlogComponent implements OnInit {
   fecha: Date;
 
   constructor(private petitions: ServicioService) {
-    if (localStorage.getItem('arr_articles')) {
-      //recupero local storage from array
-      const strArr = localStorage.getItem('arr_articles');
-      this.articles = JSON.parse(strArr);
-    } else {
-      this.articles = [];
-    }
+    // if (localStorage.getItem('arr_articles')) {
+    //   const stringArray = localStorage.getItem('arr_articles');
+    //   this.articles = JSON.parse(stringArray);
+    // } else {
+    //   this.articles = [];
+    // }
   }
 
   async ngOnInit() {
@@ -32,17 +31,17 @@ export class BlogComponent implements OnInit {
     this.categories = await this.petitions.getAllCategories();
 
     // local storage
-    // try {
-    //   if (localStorage.getItem('arr_articles')) {
-    //     //recupero local storage from array
-    //     const strArr = await localStorage.getItem('arr_articles');
-    //     this.articles = JSON.parse(strArr);
-    //   } else {
-    //     this.articles = [];
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      if (localStorage.getItem('arr_articles')) {
+        //recupero local storage from array
+        const strArr = await localStorage.getItem('arr_articles');
+        this.articles = JSON.parse(strArr);
+      } else {
+        this.articles = [];
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async onChange($event) {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/Post';
 import { ServicioService } from 'src/app/Servicio.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
@@ -16,12 +16,12 @@ export class FormularioComponent implements OnInit {
   constructor(private petitions: ServicioService) {
     // form validation
     this.form = new FormGroup({
-      titulo: new FormControl(),
-      texto: new FormControl(),
-      autor: new FormControl(),
-      imagen: new FormControl(),
-      fecha: new FormControl(),
-      categoria: new FormControl(),
+      titulo: new FormControl('', [Validators.required]),
+      texto: new FormControl('', [Validators.required]),
+      autor: new FormControl('', [Validators.required]),
+      imagen: new FormControl('', [Validators.required]),
+      fecha: new FormControl('', [Validators.required]),
+      categoria: new FormControl('', [Validators.required]),
     });
   }
 

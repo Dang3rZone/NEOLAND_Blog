@@ -35,7 +35,7 @@ export class BlogComponent implements OnInit {
       if (localStorage.getItem('arr_articles')) {
         //recupero local storage from array
         const strArr = await localStorage.getItem('arr_articles');
-        this.articles = JSON.parse(strArr);
+        this.articles = await JSON.parse(strArr);
       } else {
         this.articles = [];
       }

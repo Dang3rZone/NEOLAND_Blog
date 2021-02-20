@@ -23,7 +23,7 @@
   <!-- Fecha input -->
   <div class="form-outline mb-4">
     <input
-      type="text"
+      type="date"
       id="form4Example1"
       class="form-control form-group"
       placeholder="Fecha"
@@ -74,5 +74,11 @@
   </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+  <button
+    type="submit"
+    class="btn btn-primary btn-block mb-4"
+    [disabled]="!form.valid"
+  >
+    Send
+  </button>
 </form>

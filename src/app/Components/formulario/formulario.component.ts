@@ -31,7 +31,7 @@ export class FormularioComponent implements OnInit {
 
   async onSubmit() {
     const newArticles = await this.petitions.agregarPost(this.form.value);
-    // console.log(newArticles);
+    console.log(newArticles);
     this.form.reset();
   }
 }

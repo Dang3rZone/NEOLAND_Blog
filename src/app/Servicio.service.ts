@@ -17,7 +17,7 @@ export class ServicioService {
         autor: 'David Soriano',
         imagen:
           'https://oyster.ignimgs.com/wordpress/stg.ign.com/2021/02/Disney-Cruella-Poster.jpg?fit=bounds&width=640&height=480',
-        fecha: new Date('2021/11/02 14:35'),
+        fecha: new Date('2021/11/02'),
         categoria: 'cine',
       },
 
@@ -28,7 +28,7 @@ export class ServicioService {
         autor: 'Ign Staff',
         imagen:
           'https://sm.ign.com/t/ign_es/feature/t/the-best-s/the-best-soulslike-games_dc6v.1280.jpg',
-        fecha: new Date('2021/11/02 09:30'),
+        fecha: new Date('2021/11/02'),
         categoria: 'gaming',
       },
 
@@ -39,7 +39,7 @@ export class ServicioService {
         autor: 'Jose A. Rodríguez',
         imagen:
           'https://oyster.ignimgs.com/wordpress/stg.ign.com/2020/12/best-series-the-mandalorian.jpeg',
-        fecha: new Date('2021/11/02 09:30'),
+        fecha: new Date('2021/11/02'),
         categoria: 'tv',
       },
     ];
@@ -53,14 +53,18 @@ export class ServicioService {
     });
   }
 
+  // ADD ALL ARTICLES
   agregarPost(post) {
     return new Promise((resolve, reject) => {
       this.articles.push(post);
+      console.log(this.articles);
+
       resolve(this.articles);
       localStorage.setItem('arr_articles', JSON.stringify(this.articles));
     });
   }
 
+  // FILTER ALL ARTICLES
   getPostByCategory(category): Promise<Post[]> {
     return new Promise<Post[]>((resolve, reject) => {
       const categoryArray = [];
@@ -75,6 +79,8 @@ export class ServicioService {
       // console.log(categoryArray);
     });
   }
+
+  // GET ALL CATEGORIES
 
   getAllCategories(): string[] {
     const newArray = this.articles.map(

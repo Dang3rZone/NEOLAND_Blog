@@ -68,6 +68,7 @@ export class ServicioService {
   getPostByCategory(category): Promise<Post[]> {
     return new Promise<Post[]>((resolve, reject) => {
       const categoryArray = [];
+      // const categoryArray = JSON.parse(localStorage.getItem('arr_articles'));
 
       for (let article of this.articles) {
         if (article.categoria === category) {

@@ -45,6 +45,8 @@ export class BlogComponent implements OnInit {
   }
 
   async onChange($event) {
+    console.log($event.target.value);
+
     if ($event.target.value === 'all') {
       this.articles = await this.petitions.getAllArticles();
     } else {
